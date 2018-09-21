@@ -60,7 +60,7 @@ $(function(){
 
         //Validação da mensagem
         if(msg.value === ''){
-            document.getElementById('erroEmail').innerHTML += "Digite uma mensagem!!!<br>";
+            document.getElementById('erroMsg').innerHTML += "Digite uma mensagem!!!<br>";
             erro++;
         }
         //Cadastrar apenas se a não houver de erros

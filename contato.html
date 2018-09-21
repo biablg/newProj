@@ -10,49 +10,55 @@
     <link rel="stylesheet" href="css/carousel.css" />
     <link rel="stylesheet" href="css/index.css" />
     <style>
+        form{
+            box-align: center;
+        }
     </style>
 </head>
 
 <body>
-    <header class=" col-2 bgNav container">
-        <img src="img/logo3.jpg" width="150" length="150">
+    <header class=" bgNav container">
+        <img src="img/bom-garoto-logo.png" class="col-2">   
+        <nav id="nav_horizontal" class="col-8">
+                <ul >
+                    <li >
+                        <a href="index.html" >Início</a>
+                    </li>
+                    <li >
+                            <a href="petshop.html" >Pet Shop</a>
+                        </li>
+                    <li >
+                        <a href="servicos.html" >Serviços</a>
+                    </li>
+                    <li >
+                        <a href="fotos.html" >Fotos</a>
+                    </li>
+                    <li >
+                        <a href="dicas.html" >Dicas</a>
+                    </li>
+                    <li >
+                        <a href="contato.html" >Contato</a>
+                    </li>
+                </ul>
+        </nav>
     </header>
-    <nav id="nav_horizontal" class="container bgNav">
-        <ul>
-            <li>
-                <a href="index.html">Pet Shop</a>
-            </li>
-            <li>
-                <a href="servicos.html">Serviços</a>
-            </li>
-            <li>
-                <a href="fotos.html">Fotos</a>
-            </li>
-            <li>
-                <a href="dicas.html">Dicas</a>
-            </li>
-            <li>
-                <a href="contato.html">Contato</a>
-            </li>
-        </ul>
-    </nav>
     <main role="main" class="container">
         <form method="POST" id="contato">
             <!--<form action="cadastro.php" method="post" enctype="multipart/form-data">-->
             <h1>Fale Conosco</h1>
             <fieldset>
                 Nome:
-                <input type="text" placeholder="nome" minlength="7" maxlength="60" id="nome" name="nome" />
+                <input type="text" placeholder="nome" minlength="7" maxlength="60" id="nome" name="nome" required/>
                 <br>
                 <br>
                 <span id="erroNome"></span>
                 Email:
-                <input type="text" placeholder="email" maxlength="20" id="email" name="email" />
+                <input type="text" placeholder="email" maxlength="20" id="email" name="email" required />
                 <br>
                 <br>
                 <span id="erroEmail"></span>
                 Assunto:
-                <select name="assunto" id="assunto">
+                <select name="assunto" id="assunto" >
                     <option selected value="">Selecione</option>
                     <option value="ouvidoria">Ouvidoria</option>
                     <option value="sugestão">Sugestões</option>
@@ -63,7 +69,7 @@
                 <span id="erroAssunto"></span>
                 Mensagem:
                 <br>
-                <textarea cols="50" rows="10" name="msg" id="msg"></textarea>
+                <textarea cols="50" rows="10" name="msg" id="msg" required></textarea>
                 <br>
                 <br>
                 <span id="erroMsg"></span>
