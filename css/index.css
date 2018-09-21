@@ -1,0 +1,112 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+
+[class*="col-"] {
+    float: left;
+    padding: 15px;
+}
+
+.row:after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+/* Imagens e Videos Responsivos */
+img, video{
+    max-width: 100%;
+    height: auto;
+}
+
+/* Tablets */
+@media only screen and (max-width:900px){
+    .col-1-tablet {width: 33.33%;}
+    .col-2-tablet {width: 66.66%;}
+    .col-3-tablet {width: 100%;}
+}
+
+/* Mobile */
+@media only screen and (max-width:600px){
+    [class*="col-"] {
+        width:100%;
+    }
+}
+
+#nav_horizontal {
+    font-family: Arial, Helvetica, sans-serif;
+    /*Tipo de fonte*/
+    font-size: 14px;
+    font-weight: bolder;
+    /* Tamanho da fonte */
+    box-align: center;
+    padding-top: 50px;
+    border-style: 2px dashed red;
+}
+
+#nav_horizontal ul {
+    list-style: none;
+    /* Retirar estilo da lista (topicos) */
+    margin: 0;
+    /* Sem margem */
+    padding: 0;
+    /* Sem espaçamento interno*/
+        /* Cor de fundo do menu */
+}
+
+#nav_horizontal ul li {
+    display: inline-block;
+    /* Lista ficar horizontal */
+}
+
+#nav_horizontal ul li a {
+    display: block;
+    /* Formato de botão no link */
+    color: royalblue;
+    /* Cor do texto */
+    text-align: center;
+    /* Alinhamento centralizado do botão */
+    padding: 15px 20px;
+    /* Espaçamentno interno do botão */
+    text-decoration: none;
+    /* Sem o sublinhado do link */
+}
+
+/* Quando o mouse passar sobre o botão */
+
+#nav_horizontal ul li a:hover {
+    background-color: yellow;
+    /* cor de fundo do botão */
+}
+
+/* Quando clicar sobre o botão */
+
+#nav_horizontal ul li a:active {
+    background-color: #EEE;
+    /* cor de fundo do botão */
+    color: #333;
+    /* cor do texto */
+}
+
+footer{
+    background-color: lemonchiffon;
+}
+
+.bgNav{
+    background-color: orange;
+    height: 150px;
+}
