@@ -1,7 +1,7 @@
 $(function () {
     //Ajax consultando texto
     $.ajax({
-        url: 'petshop.txt',
+        url: 'data/petshop.txt',
         success: function (response) {
             //console.log(response);
             //alert('encontrou!!!!');
