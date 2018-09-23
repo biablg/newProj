@@ -7,8 +7,8 @@
     <title>Pet Shop Meu Amigo</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/bootstrap.min.css" />
-    <link rel="stylesheet" href="css/carousel.css" />
     <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet" href="css/carousel.css" />
     <style>
     </style>
 </head>
@@ -33,10 +33,10 @@
                                 <a href="servicos.html">Serviços</a>
                             </li>
                             <li>
-                                <a href="fotos.html">Fotos</a>
+                                <a href="fotos.html">Instalações</a>
                             </li>
                             <li>
-                                <a href="dicas.html">Dicas</a>
+                                <a href="loja.html">Instalações</a>
                             </li>
                             <li>
                                 <a href="contato.html">Contato</a>
@@ -47,36 +47,43 @@
             </div>
         </div>
     </header>
-    <main role="main" class="container">
-        <!-- Marketing messaging and featurettes
-      ================================================== -->
-        <!-- Wrap the rest of the page in another container to center all the content. -->
-
+    <main class="container">
+        <h1 class="mt-5 mb-4">Galeria de Fotos</h1>
         <div class="container marketing">
-
-            <!-- Three columns of text below the carousel -->
+            <!--Galeria Thumbnails-->
             <div class="row">
-                <div class="col-lg-4">
-                    <img src="img/cachorro.jpg">
-                    <h2>Heading</h2>
-                    <p>Donec sed odio dui.</p>
-                </div>
-                <!-- /.col-lg-4 -->
-                <div class="col-lg-4">
-                    <img src="img/cachorro.jpg">
-                    <h2>Heading</h2>
-                    <p>Donec sed odio dui.</p>
-                </div>
-                <!-- /.col-lg-4 -->
-                <div class="col-lg-4">
-                    <img src="img/cachorro.jpg">
-                    <h2>Heading</h2>
-                    <p>Donec sed odio dui.</p>
-                </div>
-                <!-- /.col-lg-4 -->
-            </div>
-            <!-- /.row -->
+                <div class="col-lg-6">
+                    <div class="row" id="galeria">
+                        <div class="col-lg3">
+                            <a href="#" value="1">
+                                <img src="img/logo.jpg">
+                            </a>
+                        </div>
+                        <div class="col-lg3">
+                            <a href="#" value="2">
+                                <img src="img/logo.png">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg3">
+                            <a href="#" value="3">
+                                <img src="img/logo3.jpg">
+                            </a>
+                        </div>
+                        <div class="col-lg3">
 
+                            <img src="img/logo.jpg">
+                        </div>
+                    </div>
+                </div>
+                <!-- mostra as fotos das thumbnails -->
+                <div class="container marketing col-lg-6" id="resgaleria">
+                    <div id="listFoto" class="row">
+                        <img src="img/logo.jpg">
+                    </div>
+                </div>
+            </div>
     </main>
     <footer>
         <div class="container">
@@ -93,8 +100,9 @@
             <div class="row">
                 <div class="col-md-12">
                     <address>
-                        &copy;Copyright 2018 -
-                        <a href="mailto:gabia@gmail.com"> - Brasília/DF </a>
+                        <strong>
+                            <a href="mailto:gabia@gmail.com"> &copy;Copyright 2018 - Brasília/DF </a>
+                        </strong>
                     </address>
                     <h5 class="text-center mt-4 mb-4">
                         <strong>Todos os diteitos reservados </strong>
@@ -107,6 +115,32 @@
     <script src="js/jquery.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script>
+        $(function () {
+            $.ajax({
+                url: 'data/',
+                success: function (u) {
+                    $.each(u, function (indice, obj) {
+                        $('#listCarnes ').append(`
+                    <div  class="col-lg-4">
+                        <img class="img-thumbnail2" src="${obj.img}  "alt="Generic placeholder image" width="300" height="300">
+                        <h2 class="font-weight-bold">${obj.nome}</h2>
+                        <p>${obj.descricao}<p>
+                        
+                    </div>
+               `);
+                    });
+                    //console.log(r);
+                    //alert('encontrou');
+
+                },
+                error: function () {
+                    alert('Ocorreu um erro!!')
+                }
+
+            });
+        });
+    </script>
 </body>
 
 </html>
