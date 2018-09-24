@@ -52,39 +52,37 @@
         <div class="container marketing">
             <!--Galeria Thumbnails-->
             <div class="row">
-                <div class="col-lg-6" id="galeria">
+                <div class="col-md-6">
                     <!--Primeira Linha Galeria Thumbnail -->
                     <div class="row">
-                        <div class="col-lg3">
-                            <button onclick="resFoto()" name="ft0" value="0">
-                                <img src="http://placehold.it/150x150&text=zero" class="img-thumbnail img-fluid">
-                            </button>
+                        <div class="col-md-6">
+                            <div class="galleryfull">
+                                <img src="img/banho1.jpg" class="img-fluid">
+                            </div>
                         </div>
-                        <div class="col-lg3">
-                            <button onclick="resFoto()" name="ft" value="1">
-                                <img src="http://placehold.it/150x150&text=um" class="img-thumbnail img-fluid">
-                            </button>
+                        <div class="col-md-6">
+                            <div class="galleryfull">
+                                <img src="img/banho.jpg" class="img-fluid">
+                            </div>
                         </div>
                     </div>
                     <!--Segunta Linha Galeria Thumbnail -->
                     <div class="row">
-                        <div class="col-lg3">
-                            <button onclick="resFoto()" name="ft" value="2">
-                                <img src="http://placehold.it/150x150&text=dois" class="img-thumbnail img-fluid">
-                            </button>
+                        <div class="col-md-6">
+                            <div class="galleryfull">
+                                <img src="img/galeria.png" class="img-fluid">
+                            </div>
                         </div>
-                        <div class="col-lg3 ">
-                            <button onclick="resFoto()" name="ft" value="3">
-                                <img src="http://placehold.it/150x150&text=tres" class="img-thumbnail img-fluid">
-                            </button>
-                            
+                        <div class="col-md-6">
+                            <div class="galleryfull">
+                                <img src="img/galeria1.png" class="img-fluid">
+                            </div>
                         </div>
                     </div>
                 </div>
                 <!-- mostra as fotos das thumbnails -->
-                <div class="container marketing col-lg-6 mb-4">
+                <div class="container marketing col-md-6 mb-4">
                     <div id="listFoto" class="row">
-                            
 
                     </div>
                 </div>
@@ -120,27 +118,36 @@
     <script src="js/jquery.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <style>
+    .galleryfull{
+        height: 175px;
+        margin: 15px 0;
+    }
+    #listFoto img{
+        margin-top: 15px;
+        height: 380px;
+    }
+    .galleryfull img{
+        cursor: pointer;
+        height: 175px;
+    }
+    </style>
     <script>
-        function resFoto() {
-            var indice = 0;
-            indice = $('button[name="ft"]').val();
-            switch (indice){
-                case 0:
-                    $('#listFoto').html('<img src="http://placehold.it/490x490&text=zero" >');
-                    break;
-                case 1:
-                    $('#listFoto').html('<img src="http://placehold.it/490x490&text=zero" >');
-                    break;
-                case 2:
-                    $('#listFoto').html('<img src="http://placehold.it/490x490&text=zero" >');
-                    break;
-                case 3:
-                    $('#listFoto').html('<img src="http://placehold.it/490x490&text=zero" >');
-                    break;
-            }
-            //$('#listFoto').html('<img src="img/foto'+indice'+ '.jpg" >');
-        };
+        $(function () {
+            //Exibe a primeira imagem assim que abre a página, caso queira que não exiba nada é só remover essas duas linhas abaixo
+            var imagefullgallery = $('.galleryfull img').attr("src");
+            $( "#listFoto" ).append( "<img src='"+imagefullgallery+"' class='img-fluid'>" );
 
+            //Executa a função quando clicar na imagem
+            $('.galleryfull img').on('click', function () {
+                //Pega o link da imagem
+                var imagefullgallery = $(this).attr("src");
+                //Limpa a imagem quando clicar novamente
+                $( "#listFoto" ).html( " " );
+                //Adiciona a imagem
+                $( "#listFoto" ).append( "<img src='"+imagefullgallery+"' class='img-fluid'>" );
+            })
+        })
     </script>
 </body>
 
